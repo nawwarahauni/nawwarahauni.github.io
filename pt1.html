@@ -1,0 +1,1046 @@
+<!DOCTYPE HTML>
+<!--
+	Hyperspace by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Nawwarah's Portfolio</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<header id="header">
+				<a href="index.html" class="title">My ePortfolio</a>
+				<nav>
+					<ul>
+						<li><a href="index.html">Home</a></li>
+                        <li><a href="tis.html">SECP1513</a></li>
+                        <li><a href="pt1.html" class="active">SECJ1013</a></li>
+						<li><a href="ds.html">SECI1013</a></li>
+						<li><a href="dl.html">SECR1013</a></li>
+					</ul>
+				</nav>
+			</header>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+				<section id="main" class="wrapper">
+					<div class="inner">
+						<h1 class="major">Programming Technique I</h1>
+							<div class="row">
+								<div class="col-6 col-12-medium">
+									<br>
+									<span class="image fit"><img src="images/PT1.jpg" alt="" height="20%"/></span>
+								</div>
+								<div class="col-6 col-12-medium">
+									<h2>Course Content</h2>
+									<ul class="alt">
+										<li>Chapter 1: Programming Problem-Solving</li>
+										<li>Chapter 2: Elementary Programming</li>
+										<li>Chapter 3: Control Structures</li>
+										<li>Chapter 4: Functions</li>
+										<li>Chapter 5: Array</li>
+										<li>Chapter 6: Input and Output</li>
+										<li>Chapter 7: Pointers</li>
+										<li>Chapter 8: Structured Data</li>
+									</ul>
+								</div>
+							</div>
+							<h2 align="center">Coursework</h2>
+							<hr>
+							<div class="row">
+								<div class="col-6 col-12-medium">
+									<h3 align="center">Assignment 1</h3>
+									<ul>
+										<li>Solving problems by planning and creating a flowchart.</li>
+									</ul>
+									<embed src="files/Assignment 1 pt.pdf" type="application/pdf" width="100%" height="600px" />
+								</div>
+								<div class="col-6 col-12-medium">
+									<h3 align="center">Assignment 2</h3>
+									<ul>
+										<li>Develop the programs by implementing the flowchart.</li>
+									</ul>
+									<embed src="files/Assignment 2 pt.pdf" type="application/pdf" width="100%" height="600px" />
+								</div>
+							</div><br>
+							<div class="row">
+								<div class="col-6 col-12-medium">
+									<h3 align="center">BMR Calculator</h3>
+									<pre><code>#include &lt;iostream&gt;
+using namespace std;
+
+int main () {
+	
+	//defined variables
+	char g, ans; //g=gender
+	int age;
+	float w, h; //w=weight, h=height
+	float BMR, BMI;
+	
+	//input
+	cout << "Enter gender (M or F): ";
+	cin >> g;
+	cout << "Enter age: ";
+	cin >> age;
+	cout << "Enter weight: ";
+	cin >> w;
+	cout << "Enter height: ";
+	cin >> h;
+	
+	//callculate BMR 
+	if (g=='M')
+		BMR = (10 * w) + (6.25 * h) - (5 * age) + 5;
+	else
+		BMR = (10 * w) + (6.25 * h) - (5 * age) - 161;
+		
+	//display BMR
+	cout << BMR << endl;
+	
+	//loop for calculating BMI
+	cout << "Do you want to calculate your BMI? (Y or N)" << endl;
+	cin >> ans;
+	
+	while (ans=='Y'){
+		BMI = w /(h * h);
+		cout << BMI << endl;
+		cout << "Do you want to calculate your BMI? (Y or N)" << endl;
+		cin >> ans;
+	}
+}</code></pre>
+								</div>
+								<div class="col-6 col-12-medium">
+									<h3 align="center">Monthly Installment Calculator</h3>
+								<pre><code>#include &lt;iostream&gt;
+using namespace std ;
+
+int main()
+{
+	cout << "MONTHLY INSTALLMENT CALCULATOR" << endl ;
+	
+	int period;
+	double income, carPrice, downPay, rate;
+	
+	//input all informations
+	cout << "\nEnter your income(month): RM" ;
+	cin >> income ;
+	cout << "\nEnter car price : RM" ;
+	cin >> carPrice ;
+	cout << "Enter down payment (RM) : " ;
+	cin >> downPay ;
+	cout << "Enter loan period (years) : " ;
+	cin >> period ;
+	cout << "Enter rate (%): " ;
+	cin >> rate ;
+	
+	//calculate monthly installment
+	double totalInter, loanAmount, monthInter, monthInstall;
+	loanAmount = carPrice - downPay ;
+	totalInter = (rate/100) * loanAmount * period ;
+	monthInter = totalInter / (period*12);
+	monthInstall = (loanAmount+totalInter) / (period*12) ;
+	
+	cout << "\nMONTHLY INSTALLMENT : RM" << monthInstall << endl;
+	
+	
+	double extraIncome;                
+	char extra; 
+	
+	//ask extra income
+	cout << "\nDo you have extra income? [y or n] : " ;
+	cin >> extra ;
+	
+	if (extra == 'y'){
+		cout << "Enter extra income(month) : RM" ;
+		cin >> extraIncome;
+	}
+	else {
+		extraIncome = 0 ;
+	}
+	
+	if ((income+extraIncome) > monthInstall){
+			cout << "Your budget is sufficient" << endl;
+		}
+	else{
+			cout << "Your budget is not enough" << endl;
+		}
+
+	return 0;
+}</code></pre>									
+								</div>
+							</div><br>
+							<div class="row">
+								<div class="col-6 col-12-medium">
+									<h3 align="center">Program to find multiple of 3, 4 and 5</h3>							
+									<pre><code>//Programmer:Nawwarah Auni binti Nazrudin
+//Matric number: A23CS0143
+//Date: 5/11/2023
+
+#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+	
+	//define variables
+	int oriNum, sum, newNum;
+	sum = 0;
+	
+	//input
+	cout << "Enter an integer number: "; 
+	cin >> oriNum; 
+	
+	//post-test loop
+	//to find sum
+	do{	
+		newNum = oriNum % 10;
+		sum += newNum; 
+		oriNum /= 10;	
+		// output sum
+			if (oriNum != 0) 
+			cout << newNum << " + ";
+		else 
+			cout << newNum << " = " << sum << endl; 
+	}	
+	while (oriNum != 0);
+	
+	//to identify whether the sum is multiple of 3,4 or 5 and display messages
+	if (sum % 3 == 0 && sum % 4 == 0 && sum % 5 == 0) 
+		cout << sum << " is multiples of 3,4 and 5" << endl;
+	else if (sum % 3 == 0 && sum % 5 == 0) 
+		cout << sum << " is multiples of 3 and 5" << endl;
+	else if (sum % 3 == 0 && sum % 4 == 0 ) 
+		cout << sum << " is multiples of 3 and 4" << endl;
+	else if (sum % 4 == 0 && sum % 5 == 0 ) 
+		cout << sum << " is multiples of 4 and 5" << endl;
+	else if (sum % 3 == 0) 
+		cout << sum << " is multiples of 3" << endl;
+	else if (sum % 4 == 0)
+		cout << sum << " is multiples of 4" << endl;
+	else if (sum % 5 == 0) 
+		cout << sum << " is multiples of 5" << endl;
+	else  
+		cout << sum << " is not multiples of 3, 4 and 5" << endl;		
+}</code></pre>
+								</div>
+								<div class="col-6 col-12-medium">
+									<h3 align="center">Program to find multiple of 3, 4 and 5</h3>
+									<pre><code>//Programmer: Nawwarah Auni binti Nazrudin
+//Matric number: A23CS0143
+//Date: 5/11/2023
+
+#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+	
+	//define variables
+	int oriNum, product, newNum;
+	product = 1;
+	
+	//input
+	cout << "Enter an integer number: "; 
+	cin >> oriNum; 
+	
+	//pre-test loop
+	//to find product
+	while (oriNum != 0){	
+		newNum = oriNum % 10;
+		product *= newNum; 
+		oriNum /= 10;	
+		// output product 
+			if (oriNum != 0) 
+			cout << newNum << " * ";
+		else 
+			cout << newNum << " = " << product << endl; 
+	}	
+	
+	//to identify whether the product is multiple of 4,5 or 7 and display messages
+	if (product % 4 == 0 && product % 5 == 0 && product % 7 == 0) 
+		cout << product << " is multiples of 4, 5 and 7" << endl;
+	else if (product % 4 == 0 && product % 5 == 0) 
+		cout << product << " is multiples of 4 and 5" << endl;
+	else if (product % 7 == 0 && product % 4 == 0 ) 
+		cout << product << " is multiples of 7 and 4" << endl;
+	else if (product % 7 == 0 && product % 5 == 0 ) 
+		cout << product << " is multiples of 7 and 5" << endl;
+	else if (product % 4 == 0) 
+		cout << product << " is multiples of 4" << endl;
+	else if (product % 5 == 0)
+		cout << product << " is multiples of 5" << endl;
+	else if (product % 7 == 0) 
+		cout << product << " is multiples of 7" << endl;
+	else  
+		cout << product << " is not multiples of 4, 5 and 7" << endl;
+		
+}</code></pre>
+								</div>
+							</div><br>
+							<div class="row">
+								<div class="col-6 col-12-medium">
+									<h3 align="center">COVID 19 Statistic Analyzer</h3>
+									<pre><code>//Programmer:Nawwarah Auni binti Nazrudin
+//Matric number:A23CS0143
+//Date:17/12/2023
+//Purpose:to determine and display active case, status, total active cases, highest, highest state and average from state name, total cases, new cases, total death and total recovered
+
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+//Function prototype
+void getInput(int &,int &, int &, int &);
+void dispOutput(int);
+void dispStatus(int);
+int calcAverage (int, int);
+
+int main(){
+	//declare variable
+	string state, highestState; 
+	int activeCases, totalCases, newCases, totalDeath, totalRecovered;
+	int numStates=0, totalActiveCases=0, highest=-999;
+		
+	do{	
+		//data 
+		cout << "\n<<<<<<<<<<<<<< DATA >>>>>>>>>>>>>" << endl;
+		cout << "State name: ";
+		getline(cin, state);
+		//function call task 2
+		getInput(totalCases, newCases, totalDeath, totalRecovered);
+		
+		//summary
+		cout << "\n<<<<<<<<<<<<< SUMMARY >>>>>>>>>>>" << endl;
+		activeCases = totalCases + newCases - totalDeath - totalRecovered;
+		cout << "Active cases: " << activeCases << endl;
+		//Function call task 3
+		dispOutput (activeCases);
+		
+		//to determine highest case and highest state
+		if (activeCases > highest){
+			highest = activeCases;
+			highestState = state;
+		}
+		
+		totalActiveCases = totalActiveCases + activeCases;
+		numStates = numStates + 1;
+		
+		//input to continue
+		cin.ignore();
+		cout << "\n\nPress <ENTER> to continue...";
+		
+	} while(cin.get() == '\n');
+	
+	//active cases
+	cout << "\n<<<<<<<<< ACTIVE CASES >>>>>>>>>>" << endl;
+	cout << "Total: " << totalActiveCases << endl;
+	cout << "Highest: " << highest << " (" << highestState << ")" << endl;
+	//display and function call task 4
+	cout << "Average for " << numStates << " states: " << calcAverage(totalActiveCases, numStates);
+	
+	return 0;
+}
+
+//task 2 - reference variable
+//Purpose: to get input of totalCases, newCases, totalDeath, totalRecovered
+void getInput (int &a, int &b, int &c, int &d){
+	cout << "Total cases: ";
+	cin >> a;
+	cout << "New cases: ";
+	cin >> b;
+	cout << "Total death: ";
+	cin >> c;
+	cout << "Total recovered: ";
+	cin >> d;
+}
+
+//task 3
+//Purpose: to call task 1 and display status based on activeCases
+void dispOutput(int m){
+	//Function call task 1
+	dispStatus(m);
+}
+
+//task 1 
+//Purpose: to determine and display status based on activeCases
+void dispStatus(int n){
+	if (n > 40) 
+		cout << "Status: Red zone";    
+	else if (n >= 21 && n <= 40) 
+		cout << "Status: Orange zone";
+	else if (n >= 1 && n <= 20) 
+		cout << "Status: Yellow zone";
+	else if (n == 0) 
+		cout << "Status: Green zone";
+}
+
+//task 4
+//Purpose: To calculate average based on total active cases and number of states entered
+int calcAverage(int x,int y){
+	int ave = x/y;
+	return ave;
+}</code></pre>
+								</div>
+								<div class="col-6 col-12-medium">
+									<h3 align="center">Temperature Converter and Analyzer</h3>
+									<pre><code>//Programmer: Nawwarah Auni binti Nazrudin
+//Matric Number: A23CS0143
+//Date: 31/12/2023
+
+#include <iostream>
+#include <iomanip>
+#include <fstream>
+using namespace std;
+
+//function prototype
+void readFile(ifstream&, float[], int&);
+void computeC(float[], float[], int);
+float average(float[], int);
+char grade(char[], float[], int, int[]);
+void writeFile(ofstream&, float[], float[], int, char[]);
+
+int main()
+{
+	const int SIZE = 8;
+	float F[SIZE];
+	float C[SIZE];
+	char G[SIZE];
+	
+	int count[3] = {0};
+	int numData = 0;
+	
+	ifstream in;
+	in.open("inputFile.txt");
+	ofstream out;
+	out.open("outputFile.txt");
+	
+	//Function call 1 - read data and store in array
+	readFile (in, F, numData);
+
+	//Function call 2 - computes the values of C
+	computeC (F, C, numData);
+	
+	//Printing summary
+	cout << "Average of the temperature in Celcius: " << fixed << setprecision(1) 
+	//Function 3 - computes the average of a list of numbers stored in an array
+	<< average (C, numData) << endl;
+	//Function 4 - determines whether the temperature (C) is high or medium or low
+	grade(G, C, numData, count);
+	cout << "Number of high temperature: " << count[0] << endl;
+	cout << "Number of medium temperature: " << count[1] << endl;
+	cout << "Number of low temperature: " << count[2] << endl;
+	
+	//Function call 5 - prints the output file 
+	writeFile (out, F, C, numData, G);
+}
+
+//Function 1 - This function reads in a list of numbers from a text file and stores them into a one dimensional array.
+void readFile (ifstream& inF, float f[], int& x)
+{
+	float num;
+	
+	//Check if file exist
+	if(!inF.is_open())
+	{
+		cout << "File could not be opened" << endl;
+	}
+	
+	//copying data from file into array
+	while (!inF.eof())
+	{
+		for(int i = 0; i < 8; i++)
+		{
+			inF >> num;
+			f[i] = num;
+			x = x + 1;
+		}
+	}
+}
+
+//Function 2 - This function computes the values of C
+void computeC (float F[], float C[],int x)
+{
+	for (int i = 0; i < x; i++)
+	{
+		C[i] = (5.0 / 9.0) * (F[i] - 32);
+	}
+}
+
+//Function 3 - This function computes the average of a list of numbers stored in an array
+float average (float C[], int x) 
+{
+	float sum = 0;
+	for (int i = 0; i < x; i++)
+		sum += C[i];
+		
+	float ave  = sum / x;
+	return ave;
+}
+
+//Function 4 - This function determines either temperature (C) is high or medium or low. 
+char grade (char G[], float C[], int x, int count[])
+{
+	for (int i = 0; i < x; i++)
+	{
+		if (C[i] >= 35)
+		{	
+			G[i] = 'H';
+			count[0]++;
+		}
+		else if (C[i] >= 20)
+		{
+			G[i] = 'M';
+			count[1]++;
+		}
+		else
+		{
+			G[i] = 'L';
+			count[2]++;
+		}
+	}
+}
+
+//Function 5 - This function prints the output file as in Figure 7.
+void writeFile (ofstream& outF, float F[], float C[], int x, char G[])
+{ 
+	if(!outF.is_open())
+	{
+		cout << "File could not be opened" << endl;
+	}
+
+	outF << setw (14) << "C(Celcius)" << setw(16) << "F(Farenheit)" << setw(15) << "Description" << endl;
+	outF << setw (14) << "==========" << setw(16) << "============" << setw(15) << "===========" << endl;
+	
+	for (int i = 0; i < x; i++)
+	{
+		outF << fixed << setprecision(2);
+		outF << setw(11) << C[i] << setw(16) << F[i] << setw(13) << G[i] << endl;
+	}
+	
+	outF.close();
+}</code></pre>
+								</div>
+							</div><br>
+							<div class="row">
+								<div class="col-6 col-12-medium">
+									<h3 align="center">Cereal Nutrition Analyzer</h3>
+									<pre><code>#include &lt;iostream&gt;
+#include &lt;fstream&gt;
+#include &lt;cctype&gt;
+#include &lt;iomanip&gt;
+#include &lt;string&gt;
+#include &lt;sstream&gt;
+using namespace std;
+
+
+struct fooddata{
+
+	string cerealtype2;
+	string cerealtype1;
+	double carbohydrate;
+	double protein;
+	double fat;
+
+};
+
+void inputFile(fooddata foodData, string cerealType1[], string cerealType2[], double carbohydrateW[], double proteinW[], double fatW[]){
+	
+	ifstream input("cerealData.txt");
+	if(!input.is_open())
+	cout << "im confused uhh" << endl;
+
+	for(int i = 0; i < 10; i++){
+		
+		input >> foodData.cerealtype1 >> foodData.cerealtype2 >> foodData.carbohydrate >> foodData.protein >> foodData.fat;
+		cerealType1[i] = foodData.cerealtype1;
+		cerealType2[i] = foodData.cerealtype2;
+		carbohydrateW[i] = foodData.carbohydrate;
+		proteinW[i] = foodData.protein;
+		fatW[i] = foodData.fat;
+
+	}
+	input.close();
+}
+
+void calconvert(double carbohydrateW[], double proteinW[], double fatW[], double carbohydrateG[], double proteinG[], double fatG[]){
+	for (int i = 0; i < 10; i++){
+
+		carbohydrateG[i] = carbohydrateW[i] * 28.35;
+		proteinG[i] = proteinW[i] * 28.35;
+		fatG[i] = fatW[i] * 28.35;
+
+	}
+}
+
+void calDV(double carbohydrateG[], double proteinG[], double fatG[], double carboDV[], double proteinDV[], double fatDV[]){
+
+	for(int i = 0; i < 10; i++){
+
+		carboDV[i] = (carbohydrateG[i]/300.00) * 100.00;
+		proteinDV[i] = (proteinG[i]/50.00) * 100.00;
+		fatDV[i] = (fatG[i]/65.00) * 100.00;
+	}
+
+}
+
+void category(double carboDV[], double proteinDV[], double fatDV[], string catcarbo[], string catprotein[], string catfat[], double avgcarbo, double avgprotein, double avgfat, string catavgcarb[], string catavgprot[], string catavgfat[]){
+
+	for(int i = 0; i < 10; i++){
+
+		if(carboDV[i] < 5)
+		catcarbo[i] = "Low";
+		else if(carboDV[i] >= 5 && carboDV[i] < 20)
+		catcarbo[i] = "Moderate";
+		else
+		catcarbo[i] = "High";
+
+		if(proteinDV[i] < 5)
+		catprotein[i] = "Low";
+		else if(proteinDV[i] >= 5 && proteinDV[i] < 20)
+		catprotein[i] = "Moderate";
+		else
+		catprotein[i] = "High";
+
+		if(fatDV[i] < 5)
+		catfat[i] = "Low";
+		else if(fatDV[i] >= 5 && fatDV[i] < 20)
+		catfat[i] = "Moderate";
+		else
+		catfat[i] = "High";
+
+		
+
+
+	}
+
+	if(avgcarbo < 5)
+		catavgcarb[0] = "Low";
+		else if(avgcarbo >= 5 && avgcarbo < 20)
+		catavgcarb[0] = "Moderate";
+		else
+		catavgcarb[0]= "High";
+
+		if(avgprotein < 5)
+		catavgprot[0] = "Low";
+		else if(avgprotein >= 5 && avgprotein < 20)
+		catavgprot[0] = "Moderate";
+		else
+		catavgprot[0] = "High";
+
+		if(avgfat < 5)
+		catavgfat[0] = "Low";
+		else if(avgfat >= 5 && avgfat < 20)
+		catavgfat[0] = "Moderate";
+		else
+		catavgfat[0] = "High";
+
+	
+
+}
+void averageDV(double carboDV[], double proteinDV[], double fatDV[], double &avgcarbo, double &avgprotein, double &avgfat){
+
+	for(int i = 0; i < 10; i++){
+		avgcarbo += carboDV[i];
+		avgprotein += proteinDV[i];
+		avgfat += fatDV[i];
+	}
+
+	avgcarbo /= 10;
+	avgprotein /= 10;
+	avgfat /= 10;
+
+}
+
+void outputFile(string catcarbo[], string catprotein[], string catfat[], string cerealType1[], string cerealType2[], double carboDV[], double proteinDV[], double fatDV[],  double avgcarbo, double avgprotein, double avgfat, string catavgcarb[], string catavgprot[], string catavgfat[]){
+
+	ofstream outFile("outputcereal.txt");
+
+	outFile << "Type" << "             " << "    Carbohydrate" << "            " << "       Protein" << "             " << "             Fat" << endl;
+	outFile << "========" << "           " << "  =============" << "           " << "     =============" << "           " << "      =============" << endl;
+
+	for(int i = 0; i < 10; i++){
+		outFile << cerealType1[i] << " " << cerealType2[i] << "            " << fixed << setprecision(1) << right << setw(5) << carboDV[i] << "%" << left << setw(12) << "(" + catcarbo[i] + ")" << "            " <<  left << setw(5) << proteinDV[i] << "%" << left << setw(12) << "(" + catprotein[i] + ")" << "           " << right << setw(5) << fatDV[i] << "%" << left << setw(12) << "(" + catfat[i] + ")" << endl;
+	}
+
+	
+	outFile << "\n\nThe four cereal types produce an average DV of:" << endl;
+	outFile << "\nCarbohydrate : " << avgcarbo << "%(" + catavgcarb[0] + ")" << endl;
+	outFile << "Protein      : " << avgprotein << "%(" + catavgprot[0] + ")" << endl;
+	outFile << "Fat          : " << avgfat << "%(" + catavgfat[0] + ")" << endl;
+	outFile.close();
+}
+
+int main(){
+
+	int choice1, choice2, counter = 1;
+	string catcarbo[10], catprotein[10], catfat[10], catavgcarb[1], catavgprot[1], catavgfat[1];
+	string cerealType2[10];
+	string cerealType1[10];
+	
+	double carbohydrateW[10], proteinW[10], fatW[10];
+	double carbohydrateG[10], proteinG[10], fatG[10];
+	double carboDV[10], proteinDV[10], fatDV[10];
+	double avgcarbo, avgprotein, avgfat;
+	double container[10];
+	fooddata foodData;
+
+	inputFile(foodData, cerealType1, cerealType2, carbohydrateW, proteinW, fatW);
+	cout << "all good" << endl;
+
+	calconvert(carbohydrateW, proteinW, fatW, carbohydrateG, proteinG, fatG);
+	calDV(carbohydrateG, proteinG, fatG, carboDV, proteinDV, fatDV);
+	averageDV(carboDV, proteinDV, fatDV, avgcarbo, avgprotein, avgfat);
+	category(carboDV, proteinDV, fatDV, catcarbo, catprotein, catfat, avgcarbo, avgprotein, avgfat, catavgcarb, catavgprot, catavgfat);
+	
+
+	cout << "1. Carbohydrate \n2. Protein \n3. Fat" << endl;
+	cout << "Please Enter your choice >> ";
+	cin >> choice1;
+
+	cout << "\n\n";
+	cout << "1. Low \n2. Moderate \n3. High" << endl;
+	cout << "Please Enter your choice >> ";
+	cin >> choice2;
+
+	string option1[3] = {"Carbohydrate", "Protein", "Fat"};
+	string option2[3] = {"Low", "Moderate", "High"};
+
+	cout << "\nlist of cereal(s) with " << option2[(choice2 - 1)] << " amount of " << option1[(choice1 - 1)] << endl;
+	
+
+
+if(choice1 == 1){
+		if(choice2 == 1){
+			for(int i = 0; i < 10; i++){
+				if (catcarbo[i] == "Low"){
+					cout << counter << ". Cereal" << " " << cerealType2[i] << endl;
+					counter++;
+				}
+		
+			}
+
+		}
+		else if(choice2 == 2){
+			for(int i = 0; i < 10; i++){
+				if (catcarbo[i] == "Moderate"){
+					cout << counter << ". Cereal" << " " << cerealType2[i] << endl;
+					counter++;
+				}
+		
+			}
+		}
+		else{
+			for(int i = 0; i < 10; i++){
+				if (catcarbo[i] == "High"){
+					cout << counter << ". Cereal" << " " << cerealType2[i] << endl;
+					counter++;
+				}
+			}
+		}
+		
+	}
+else if(choice1 == 2){
+		if(choice2 == 1){
+			for(int i = 0; i < 10; i++){
+				if (catprotein[i] == "Low"){
+					cout << counter << ". Cereal" << " " << cerealType2[i] << endl;
+					counter++;
+				}
+		
+			}
+
+		}
+		else if(choice2 == 2){
+			for(int i = 0; i < 10; i++){
+				if (catprotein[i] == "Moderate"){
+					cout << counter << ". Cereal" << " " << cerealType2[i] << endl;
+					counter++;
+				}
+		
+			}
+		}
+		else{
+			for(int i = 0; i < 10; i++){
+				if (catprotein[i] == "High"){
+					cout << counter << ". Cereal" << " " << cerealType2[i] << endl;
+					counter++;
+				}
+			}
+		}
+		
+	}
+else if(choice1 == 3){
+		if(choice2 == 1){
+			for(int i = 0; i < 10; i++){
+				if (catfat[i] == "Low"){
+					cout << counter << ". Cereal" << " " << cerealType2[i] << endl;
+					counter++;
+				}
+		
+			}
+
+		}
+		else if(choice2 == 2){
+			for(int i = 0; i < 10; i++){
+				if (catfat[i] == "Moderate"){
+					cout << counter << ". Cereal" << " " << cerealType2[i] << endl;
+					counter++;
+				}
+		
+			}
+		}
+		else{
+			for(int i = 0; i < 10; i++){
+				if (catfat[i] == "High"){
+					cout << counter << ". Cereal" << " " << cerealType2[i] << endl;
+					counter++;
+				}
+			}
+		}
+		
+	}
+
+	outputFile(catcarbo, catprotein, catfat, cerealType1, cerealType2, carboDV, proteinDV, fatDV,  avgcarbo, avgprotein, avgfat, catavgcarb, catavgprot, catavgfat);
+
+
+	
+
+
+	return 0;
+
+	
+
+}</code></pre>
+								</div>
+								<div class="col-6 col-12-medium">
+									<h3 align="center">Grades Analysis System</h3>
+									<pre><code>/*CASE STUDY 2*/
+/* 	NAME : NUR FIRZANA BINTI BADRUS HISHAM 
+			NAWWARAH AUNI BINTI NAZRUDIN 
+			NABIL AFLAH BOO BINTI MOHD YOSUF BOO YONG CHONG
+			MUHAMMAD ADAM BIN RAZALI */
+
+#include &lt;iostream&gt;
+#include &lt;iomanip&gt;
+#include &lt;fstream&gt;
+#include &lt;cstring&gt;
+
+using namespace std;
+
+//Function prototype
+void readFile(string [], string [], char [][20], char [], int, int);
+void compareAnswer(string&, string [], char [], char [][20], int&, int [], int, int, int&);
+void printMissQuestion(int, int, int [], char [], char [][20], int);
+void printReport(string [], string [], char [], char [][20], int&, int [], int x, int y, int&);
+
+int main() 
+{
+	const int MAX_STUDENTS = 15;
+		const int NUM_QUESTIONS = 20;
+		
+	string studentNames[MAX_STUDENTS];
+	string studentIds[MAX_STUDENTS];
+	char studentAnswers[MAX_STUDENTS][NUM_QUESTIONS];
+	char correctAnswers[NUM_QUESTIONS];
+	
+	string studentID;
+	int studentIndex;
+	int numMissed = 0;
+	int missedQuestions[NUM_QUESTIONS];
+	
+	//To read and copy student data and answers and the correct answers
+	readFile(studentNames, studentIds, studentAnswers, correctAnswers, MAX_STUDENTS, NUM_QUESTIONS);
+	
+	//To get student ID
+	cout << "Enter the student ID: ";
+	cin >> studentID;
+	
+	//To compare student answer based on the student ID
+	compareAnswer(studentID, studentIds, correctAnswers, studentAnswers, numMissed, missedQuestions, MAX_STUDENTS, NUM_QUESTIONS, studentIndex);
+	
+	//Display output on the screen
+	cout << "\nEXAM RESULT\n";
+	cout << "Name: " << studentNames[studentIndex] << endl;
+	cout << "Student ID: " << studentIds[studentIndex] << endl;
+	cout << "Number of questions missed: " << numMissed << endl;
+	cout << "List of the questions missed: " << endl;
+	cout << left << setw(10) << "Question" << setw(18) << "Correct Answer" << setw(15) << "Student Answer" << endl;
+	//To display the list of question missed, correct answer and student answer
+	printMissQuestion(studentIndex, numMissed, missedQuestions, correctAnswers, studentAnswers, NUM_QUESTIONS);
+	
+	//To calculate the student percentage 
+	double percentage = static_cast<double>(NUM_QUESTIONS - numMissed) / NUM_QUESTIONS * 100.0;
+	
+	//To determine student grade
+	char grade;
+	if (percentage >= 80) 
+		grade = 'A';
+		else if (percentage >= 70) 
+		grade = 'B';
+	else if (percentage >= 60) 
+		grade = 'C';
+	else 
+		grade = 'F';
+		
+	//Display output on the screen
+	cout << "Percentage: " << fixed << setprecision(2) << percentage << "% , GRED : " << grade << "\n";
+	
+	//To display output on the output File
+	printReport(studentNames, studentIds, correctAnswers, studentAnswers, numMissed, missedQuestions, MAX_STUDENTS, NUM_QUESTIONS, studentIndex);
+	
+	return 0;
+}
+	
+void readFile(string names[], string ids[], char studentAns[][20],char correctAns[], int x, int y)
+{
+	//Open StudentAnswers.dat file
+	ifstream inputFile("StudentAnswers.dat");
+	
+	if (!inputFile) 
+	{
+		cout << "Unable to open StudentAnswers.dat" << endl;
+	}
+
+	//To read and copy student data and answers
+	for (int i = 0; i < x; i++)
+	{
+		inputFile >> names[i] >> ids[i];
+			for (int j = 0; j < y; j++) 
+			{
+				inputFile >> studentAns[i][j];
+			}
+	}
+	
+	//Close StudentAnswers.dat file
+	inputFile.close();
+	
+	//Open CorrectAnswer.txt file
+	ifstream correctAnswersFile("CorrectAnswer.txt");
+	if (!correctAnswersFile) 
+	{
+		cout << "Unable to open CorrectAnswer.txt" << endl;
+	}
+
+	//To read and copy the correct answers
+	for (int i = 0; i < y; i++) 
+	{
+		correctAnswersFile >> correctAns[i];
+	}
+	
+	//Close CorrectAnswer.txt file
+	correctAnswersFile.close();
+}
+
+void compareAnswer(string& inputID, string ids[], char correctAns[], char studentAns[][20], int& numMissed, int missedQuestions[], int x, int y, int& studentIndex) 
+{
+	//Finding students with the id
+	bool studentFound = false;
+	for (int i = 0; i < x; i++) 
+	{
+		if (inputID == ids[i]) 
+		{
+			studentFound = true;
+			studentIndex = i;
+			break;
+		}
+	}
+	
+	//Comparing the answers
+	if (studentFound)
+	{
+		for (int i = 0; i < y; i++) 
+		{
+			if (studentAns[studentIndex][i] != correctAns[i]) 
+			{
+				missedQuestions[numMissed++] = i;
+			}
+		}		
+	}
+	else
+		cout << "Student not found" << endl;
+}
+
+void printMissQuestion(int studentIndex, int numMissed, int missQuest[], char correctAnswer[], char studentAnswer[][20],int y) 
+{ 
+	for (int i = 0; i < numMissed; i++) 
+	{
+		cout << left << setw(13) << (missQuest[i] + 1) << setw(20) << correctAnswer[missQuest[i]] << setw(22) << studentAnswer[studentIndex][missQuest[i]] << endl;
+	}
+}
+
+void printReport(string name[], string ids[], char correctAns[], char studentAns[][20], int& numMissed, int missedQuestions[], int x, int y, int& studentIndex) 
+{
+	// Open GradesReport.txt file
+	ofstream outputFile("GradesReport.txt");
+	if (!outputFile) 
+	{
+		cerr << "Error: Unable to open GradesReport.txt" << endl;
+		return;
+	}
+
+	// Display on output file
+	outputFile << "LIST OF STUDENTS AND GRADES" << endl;
+	outputFile << left << setw(15) << "NAME" << setw(15) << "ID" << setw(15) << "PERCENTAGE" << setw(10) << "GRADE" << endl;
+
+	for (int i = 0; i < x; i++) 
+	{
+		numMissed = 0;
+		// Compare answer for each student
+		compareAnswer(ids[i], ids, correctAns, studentAns, numMissed, missedQuestions, x, y, studentIndex);
+
+		// Determine percentage for each student
+		double percentage = static_cast<double>(y - numMissed) / y * 100;
+
+		// Determine grade for each student
+		char grade;
+		if (percentage >= 80) 
+			grade = 'A';
+		else if (percentage >= 70) 
+			grade = 'B';
+		else if (percentage >= 60) 
+			grade = 'C';
+		else 
+			grade = 'F';
+
+		// Display on output file for each student
+		outputFile << left << setw(15) << name[i] << setw(15) << ids[i] << setw(15) << fixed << setprecision(2) << percentage << setw(10) << grade << endl;
+	}
+
+	// Close GradesReport.txt file
+	outputFile.close();
+}</code></pre>
+								</div>
+							</div><br>
+							<hr>
+							<h2>Reflection</h2>
+							<blockquote>In reflecting on programming techniques, I've have learned how important it is to take structured and efficient approaches. Breaking down complex problems into manageable tasks and modular programming have improved the readability and reusability of code. Next, prioritizing code efficiency and optimization also contributes to better performance and maintainability. I also think that working with others has exposed me to different programming styles and taught me the importance of writing code that is understandable to other developers. And finally, realizing that you need to constantly educate yourself in the dynamic field of programming is crucial to staying competitive and having a fulfilling programming experience.</blockquote>
+					</div>
+				</section>
+			</div>
+
+		<!-- Footer -->
+			<footer id="footer" class="wrapper alt">
+				<div class="inner">
+					<ul class="menu">
+						<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
